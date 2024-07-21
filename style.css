@@ -20,6 +20,7 @@ body{
     top: 50%;
     left: 50%;
     z-index: 1;
+    overflow: hidden;
     border-radius: 16.8em;
     animation: colors 12s infinite forwards;
 }
@@ -78,7 +79,6 @@ body{
 .spinner{
     height: 28.12em;
     width: 28.12em;
-    border: 1px solid white;
     border-radius: 50%;
     position: absolute;
     top: 8.75em;
@@ -88,7 +88,23 @@ body{
 
 @keyframes spin{
     10%{
-        /* transform: rotate(360deg); */
+        transform: rotate(0deg);
+    }
+
+    45%{
+        transform: rotate(180deg);
+    }
+
+    55%{
+        transform: rotate(180deg);
+    }
+
+    90%{
+        transform: rotate(360deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
     }
 }
 
@@ -124,4 +140,162 @@ body{
     width: 12.5em;
     right: -4.3em;
     bottom: -4.3em;
+}
+
+
+.moon{
+    height: 3.75em;
+    width: 3.75em;
+    box-shadow: 1.25em -1.2em 0 0 #f7f7de;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -3.1em;
+    left: 10.93em;
+}
+
+.moon:before,
+.moon:after{
+    position: absolute;
+    content: "";
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.moon:before{
+    height: 6.25em;
+    width: 6.25em;
+    right: -2.5em;
+    bottom:0;
+}
+
+.moon:after{
+    height: 11.8em;
+    width: 11.8em;
+    left: -2.8em;
+    bottom: -2.8em;
+}
+
+.ray1{
+    height: 0;
+    width: 0.6em;
+    border-bottom: 10.6em solid rgba(255, 255, 255, 0.1);
+    border-left: 1.8em solid transparent;
+    border-right: 1.8em solid transparent;
+    position: absolute;
+    transform: rotate(130deg);
+    bottom: 0.6em;
+    right:4em ;
+
+}
+
+.ray2{
+    position: absolute;
+    height: 0;
+    width: 0.6em;
+    border-bottom: 12.5em solid rgba(255, 255, 255, 0.1);
+    border-left: 2.1em solid transparent;
+    border-right: 2.1em solid transparent;
+    transform: rotate(230deg);
+    left: 3.75em;
+    bottom: -0.3em;
+}
+
+.ray3{
+    position: absolute;
+    height: 0;
+    width: 0.3em;
+    border-bottom: 12.5em solid rgba(255, 255, 255, 0.1);
+    border-left: 0.9em solid transparent;
+    border-right: 0.9em solid transparent;
+    transform: rotate(80deg);
+    left:-5.2em;
+    bottom: -5.6em;
+}
+
+.ray4{
+    position: absolute;
+    height: 0;
+    width: 0.1em;
+    border-bottom: 12.5em solid rgba(255, 255, 255, 0.1);
+    border-left: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;
+    transform: rotate(280deg);
+    left:7.5em;
+    bottom: -5.6em;
+}
+
+.stars{
+    height: 0.15em;
+    width: 0.15em;
+    background-color: #fff;
+    position: absolute;
+    top: 3.7em;
+    left: 9.3em;
+    border-radius: 50%;
+    box-shadow: 3em 9.3em #fff,-1.8em 11.2em #fff,2.5em 16em #fff,-5em 6.2em #fff, -5.6em -0.6em #fff, 1.6em 10.6em #fff, 7em 0 0.06em #fff, -5em 17.5em 0 0.05em #fff ;
+    animation: twinkle 12s infinite forwards;
+}
+
+@keyframes twinkle {
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 0;
+    }
+    53%{
+        opacity: 0.7;
+    }
+    55%{
+        opacity: 0.7;
+    }
+    98%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.glow{
+    height: 21.8em;
+    width: 21.8em;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    bottom: -19em;
+    animation: float 5s infinite;
+}
+
+@keyframes float {
+    50%{
+        transform: translateY(0.75em);
+    }
+}
+
+.glow:before,
+.glow:after{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: inherit;
+    border-radius: 50%;
+}
+
+.glow:before{
+    left: -9.3em;
+    top: 3.1em;
+    background-color: white;
+}
+
+.glow:after{
+    right: -5.6em;
+    top: -0.8em;
+}
+
+@media  screen and (min-width:600px) {
+    .container{
+        font-size: 20px;
+    }
 }
