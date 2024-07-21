@@ -3,3 +3,14 @@ body{
     margin:0;
     background-color: #0C1330;
 }
+
+.container{
+    height: 25em;
+    width: 16.8em;
+    background: linear-gradient(
+        #3f006c,
+        #750050,
+        #b10042,
+        #da48
+    );
+}
